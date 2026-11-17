@@ -1,5 +1,5 @@
 /*make the motors and all the vars I need, make the constructor, the turn and drive motors. make an update input method and in the periodic run it. make a runsetpoint method */
-package frc.robot.drive;
+package frc.robot.Drive;
 import java.util.Queue;
 
 import com.ctre.phoenix6.BaseStatusSignal;

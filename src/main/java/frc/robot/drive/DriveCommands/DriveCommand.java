@@ -1,33 +1,30 @@
-package frc.robot.drive;
+package frc.robot.Drive.DriveCommands;
 
 import java.util.function.DoubleSupplier;
 
 import org.wpilib.math.util.MathUtil;
 import org.wpilib.telemetry.Telemetry;
+
+import frc.robot.Drive.Drive;
+
 import org.wpilib.math.geometry.Pose2d;
 import org.wpilib.math.geometry.Rotation2d;
 import org.wpilib.math.geometry.Transform2d;
 import org.wpilib.math.geometry.Translation2d;
 import org.wpilib.math.kinematics.ChassisVelocities;
 import org.wpilib.driverstation.MatchState;
-import org.wpilib.driverstation.RobotState;
-import org.wpilib.driverstation.Alliance;
-import org.wpilib.driverstation.MatchType;
-import org.wpilib.driverstation.DriverStationErrors;
-import org.wpilib.driverstation.Gamepad;
 import org.wpilib.driverstation.Alliance;
 import org.wpilib.command2.Command;
-import org.wpilib.command2.button.CommandGamepad;
-import org.wpilib.command2.button.GamepadButton;
+import org.wpilib.command2.button.CommandXboxController;
 
 public class DriveCommand extends Command {
     private DoubleSupplier xSupplier;
     private DoubleSupplier ySupplier;
     private Drive swerve;
     private DoubleSupplier rotationSupplier;
-    CommandGamepad controller;
+    CommandXboxController controller;
     
-      public DriveCommand(DoubleSupplier xSupplier, DoubleSupplier ySupplier, DoubleSupplier rotationSupplier, Drive swerve, CommandGamepad controller) {
+      public DriveCommand(DoubleSupplier xSupplier, DoubleSupplier ySupplier, DoubleSupplier rotationSupplier, Drive swerve, CommandXboxController controller) {
         this.xSupplier = xSupplier;
         this.ySupplier = ySupplier;
         this.swerve = swerve;
