@@ -1,23 +1,20 @@
-package frc.robot.drive;
+package frc.robot.Drive.DriveCommands;
 
 import java.util.function.DoubleSupplier;
 
 import org.wpilib.math.util.MathUtil;
+
+import frc.robot.Drive.Drive;
+
 import org.wpilib.math.geometry.Pose2d;
 import org.wpilib.math.geometry.Rotation2d;
 import org.wpilib.math.geometry.Transform2d;
 import org.wpilib.math.geometry.Translation2d;
 import org.wpilib.math.kinematics.ChassisVelocities;
 import org.wpilib.driverstation.MatchState;
-import org.wpilib.driverstation.RobotState;
-import org.wpilib.driverstation.Alliance;
-import org.wpilib.driverstation.MatchType;
-import org.wpilib.driverstation.DriverStationErrors;
-import org.wpilib.driverstation.Gamepad;
 import org.wpilib.driverstation.Alliance;
 import org.wpilib.command2.Command;
-import org.wpilib.command2.button.CommandGamepad;
-import org.wpilib.command2.button.GamepadButton;
+import org.wpilib.command2.button.CommandXboxController;
 
 /*The plan:
  * Get the robot current location, the alliance color and the hub location in feild coordinates. 
@@ -35,7 +32,7 @@ public class AutoAlignHubCommand extends Command {
     private DoubleSupplier ySupplier;
     boolean isAllianceRed;
     private boolean isHubLocationKnown = false;
-    CommandGamepad controller;
+    CommandXboxController controller;
     Translation2d robotLocation;
     Translation2d Hublocation;
     private double rotationKP = 8;
@@ -43,7 +40,7 @@ public class AutoAlignHubCommand extends Command {
 
     
      
-    public AutoAlignHubCommand(Drive swerve, double xSupplier, double ySupplier, double rotationSupplier, CommandGamepad controller) {
+    public AutoAlignHubCommand(Drive swerve, double xSupplier, double ySupplier, double rotationSupplier, CommandXboxController controller) {
         this.swerve = swerve;
         this.rotationSupplier = () -> rotationSupplier;
         this.controller = controller;

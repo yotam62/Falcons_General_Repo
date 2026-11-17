@@ -1,4 +1,4 @@
-package frc.robot.drive;
+package frc.robot.Drive;
 
 import org.wpilib.math.linalg.VecBuilder;
 import org.wpilib.math.linalg.Vector;
@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.wpilib.system.Timer;
 import org.wpilib.telemetry.Telemetry;
 import org.wpilib.smartdashboard.Field2d;
-import frc.robot.drive.VisionSubsystem.VisionMeasurement;
+import frc.robot.Drive.VisionSubsystem.VisionMeasurement;
 
 public class Drive extends SubsystemBase{
 
